@@ -29,7 +29,14 @@ pipeline {
         stage('results') {
                  steps {
                     echo 'tests execution'
-                    sh "allure includeProperties: false, jdk: '', results: [[path: 'target/allure-results']]"
+                    //sh "allure includeProperties: false, jdk: '', results: [[path: 'target/allure-results']]"
+                    allure([
+                        includeProperties: false,
+                        jdk: '',
+                        properties: [],
+                        reportBuildPolicy: 'ALWAYS',
+                        results: [[path: 'target/allure-results']]
+                    ])
                  }
               }
 	    /* stage('Reports') {
