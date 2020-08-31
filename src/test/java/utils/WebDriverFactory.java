@@ -17,8 +17,17 @@ public class WebDriverFactory {
             case CHROME:
                 WebDriverManager.chromedriver().setup();
                 ChromeOptions chromeOptions = new ChromeOptions();
-                chromeOptions.addArguments("--no-sandbox");
-                chromeOptions.addArguments("--disable-dev-shm-usage");
+                /**/
+                chromeOptions.addArguments("--no-sandbox"); // Bypass OS security model, MUST BE THE VERY FIRST OPTION
+                chromeOptions.addArguments("--headless");
+                chromeOptions.setExperimentalOption("useAutomationExtension", false);
+                chromeOptions.addArguments("start-maximized"); // open Browser in maximized mode
+                chromeOptions.addArguments("disable-infobars"); // disabling infobars
+                chromeOptions.addArguments("--disable-extensions"); // disabling extensions
+                chromeOptions.addArguments("--disable-gpu"); // applicable to windows os only
+                chromeOptions.addArguments("--disable-dev-shm-usage"); // overcome limited resource problems
+                chromeOptions.merge(capabilities);
+                /**/
                 if (options.length() > 0) chromeOptions.addArguments(options);
                 capabilities.setCapability(ChromeOptions.CAPABILITY, options);
                 return new ChromeDriver(chromeOptions);
