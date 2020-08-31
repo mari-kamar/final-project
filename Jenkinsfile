@@ -3,13 +3,13 @@ pipeline {
     tools{
     maven "MavenTest"
     //jdk "JdkTest"
-    //git "Git"
+    git "GitTest"
     }
     stages {
         stage('Build') {
             steps {
                 echo "It's Build"
-                git credentialsId: '3c34ed55-4061-46f9-83d9-9e22653d6144', url: 'https://github.com/mari-kamar/habr_tests'
+                git credentialsId: '3c34ed55-4061-46f9-83d9-9e22653d6144', url: 'https://github.com/mari-kamar/final-project'
                 echo "Stop build"
             }
         }
