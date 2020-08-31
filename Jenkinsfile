@@ -16,13 +16,13 @@ pipeline {
 		stage('Clean') {
             steps {
                 echo "tests execute"
-                bat 'mvn clean'
+                sh 'mvn clean'
             }
         }
 		stage('Test') {
             steps {
                 echo "tests run"
-                bat 'mvn test'
+                sh 'mvn test'
 
             }
         }
