@@ -17,6 +17,8 @@ public class WebDriverFactory {
             case CHROME:
                 WebDriverManager.chromedriver().setup();
                 ChromeOptions chromeOptions = new ChromeOptions();
+                chromeOptions.addArguments("--no-sandbox");
+                chromeOptions.addArguments("--disable-dev-shm-usage");
                 if (options.length() > 0) chromeOptions.addArguments(options);
                 capabilities.setCapability(ChromeOptions.CAPABILITY, options);
                 return new ChromeDriver(chromeOptions);
