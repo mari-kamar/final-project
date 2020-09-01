@@ -1,9 +1,8 @@
 pipeline {
    agent any
     tools{
-    maven "MavenTest"
-    //jdk "JdkTest"
-    git "GitTest"
+        maven "MavenTest"
+        git "GitTest"
     }
     stages {
         stage('Build') {
@@ -27,20 +26,8 @@ pipeline {
             }
         }
         stage('results') {
-                 steps {
-                    echo 'tests execution'
-                    //sh "allure includeProperties: false, jdk: '', results: [[path: 'target/allure-results']]"
-                    allure([
-                        includeProperties: false,
-                        jdk: '',
-                        properties: [],
-                        reportBuildPolicy: 'ALWAYS',
-                        results: [[path: 'target/allure-results']]
-                    ])
-                 }
-              }
-	    /* stage('Reports') {
-	        steps{
+            steps {
+                echo 'tests execution'
                 allure([
                     includeProperties: false,
                     jdk: '',
@@ -49,6 +36,6 @@ pipeline {
                     results: [[path: 'target/allure-results']]
                 ])
             }
-	    } */
+        }
     }
 }

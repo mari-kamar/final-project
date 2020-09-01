@@ -26,7 +26,7 @@ public class HabrTest extends HabrBaseTest {
         Assert.assertTrue(habrMainPage.getMainLogo().isDisplayed());
         logger.info("logo has link");
     }
-/*
+
 // Проверка, что при переходе на страницу Авторизации есть заголовок "Вход"
     @Epic("Тестирование сервиса HABR")
     @Feature(value="функционал страницы Авторизации")
@@ -234,7 +234,7 @@ public class HabrTest extends HabrBaseTest {
         Assert.assertTrue(rate.isEnabled());
     }
 
-// Проверка наличия приглашения у автора
+/*// Проверка наличия приглашения у автора
     @Epic("Тестирование сервиса HABR")
     @Feature(value="функционал страницы статей")
     @Severity(SeverityLevel.BLOCKER)
