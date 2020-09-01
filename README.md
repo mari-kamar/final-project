@@ -1,1 +1,1 @@
-final project with allure and jenkins
+final project
