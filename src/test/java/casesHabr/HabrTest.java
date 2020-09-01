@@ -201,7 +201,7 @@ public class HabrTest extends HabrBaseTest {
         Assert.assertTrue(userRate.isDisplayed());
     }
 
-// Проверка открытия первого поста
+/*// Проверка открытия первого поста
     @Epic("Тестирование сервиса HABR")
     @Feature(value="функционал страницы статей")
     @Severity(SeverityLevel.BLOCKER)
@@ -216,7 +216,7 @@ public class HabrTest extends HabrBaseTest {
         WebElement titlePost = driver.findElement(By.xpath("//h2[contains(@class, 'post__title')]"));
         String textTitlePost = titlePost.getText();
         Assert.assertEquals(habrPostsPage.getTitlePostFirst(), textTitlePost);
-    }
+    }*/
 
 // Проверка открытия страницы информации об авторе первого поста
     @Epic("Тестирование сервиса HABR")
