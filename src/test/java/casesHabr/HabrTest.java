@@ -106,7 +106,7 @@ public class HabrTest extends HabrBaseTest {
         logger.info("Search page HABR has myText search");
     }
 // Проверка, что в списке есть пользователь, которого искали
-    @Epic("Тестирование сервиса HABR")
+/*    @Epic("Тестирование сервиса HABR")
     @Feature(value="функционал страницы пользователей")
     @Severity(SeverityLevel.CRITICAL)
     @Description("Проверка отображения пользователя по которому осуществлялся поиск")
@@ -120,7 +120,7 @@ public class HabrTest extends HabrBaseTest {
         String xpath = "//*[contains(@class, 'list-snippet__username')]/a[contains(@class,'list-snippet__nickname') and contains(text(), '" + myUserSearch + "')]";
         WebElement userText = driver.findElement(By.xpath(xpath));
         Assert.assertEquals(userText.getText(), myUserSearch);
-    }
+    }*/
 
 //Проверка открытия попапа смены языка
     @Epic("Тестирование сервиса HABR")
